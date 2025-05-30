@@ -1,58 +1,49 @@
-# OpenAI Agents SDK Notes
+📘 OpenAI Agents SDK Notes
+Main: Overview
+The OpenAI Agents SDK is a production-grade toolkit for developing agentic AI applications in Python. It offers a minimal and intuitive interface for orchestrating agents, tools, and control flows with traceability and extensibility.
 
-## 🧠 What is the OpenAI Agents SDK?
+Originally built as a successor to the Swarm experimental framework, this SDK simplifies the process of building complex AI applications by offering only a few powerful primitives.
 
-The **OpenAI Agents SDK** is a lightweight, production-ready framework to build **agentic AI apps** using a small set of powerful primitives. It's designed to be simple, flexible, and easy to use — while still enabling the construction of complex multi-agent systems.
+Main: Key Components
+🔹 Agents
+Core logic units powered by LLMs.
 
-> It’s a polished successor to the experimental *Swarm* framework.
+Defined with instructions and an optional toolset.
 
----
+Can perform tasks autonomously or as part of a system.
 
-## 🔧 Core Primitives
+🔹 Handoffs
+Delegate subtasks from one agent to another.
 
-The SDK is centered around **three main primitives**:
+Allows complex workflows to be modular and maintainable.
 
-- **Agents**: LLMs with instructions and tools.
-- **Handoffs**: Mechanism for delegating tasks between agents.
-- **Guardrails**: Input validation logic for safer and more controlled interactions.
+🔹 Guardrails
+Validate and filter inputs before they're passed to agents.
 
-These primitives, when combined with Python, let you model complex workflows with minimal overhead.
+Ensure only safe or relevant inputs are processed.
 
----
+Main: Why Use the Agents SDK?
+The SDK is guided by two main principles:
 
-## 🎯 Why Use the Agents SDK?
+Minimal yet powerful: Just a few constructs, but expressive enough for real-world complexity.
 
-The SDK is built on two core design principles:
+Highly customizable: Sensible defaults that can be overridden when necessary.
 
-1. **Minimalist, but powerful** – Just enough features to be productive without overcomplication.
-2. **Works out of the box** – Easy to use, but highly customizable.
+Subheading: Core Features
+✅ Agent Loop
+Built-in loop to automatically handle tool invocations and LLM outputs until task completion.
 
----
+🐍 Python-first Design
+Leverages standard Python features instead of introducing new abstractions.
 
-## 🌟 Main Features
+🧠 Handoffs
+Coordinate multiple agents to delegate work intelligently.
 
-- **🌀 Agent Loop**  
-  Auto-manages tool execution, result flow, and iteration until the LLM finishes the task.
+🛡️ Guardrails
+Run validations in parallel; abort early if inputs fail checks.
 
-- **🐍 Python-First Design**  
-  Chain and orchestrate agents using native Python syntax—no need to learn new DSLs or frameworks.
+🔧 Function Tools
+Any Python function can be turned into a tool, with automatic schema and input validation using Pydantic.
 
-- **🤝 Handoffs**  
-  Agents can pass tasks to other agents seamlessly.
-
-- **🛡️ Guardrails**  
-  Run validations alongside agent logic to catch bad inputs early.
-
-- **🧰 Function Tools**  
-  Turn any Python function into a tool. Schemas are auto-generated and validated using Pydantic.
-
-- **🔍 Tracing**  
-  Debug, visualize, and monitor agent workflows. Built-in support for OpenAI's eval/fine-tune/distill tools.
-
----
-
-## 🚀 Installation
-
-```bash
-pip install openai-agents
-
+📊 Tracing & Evaluation
+Includes tools for debugging, monitoring, evaluating workflows, and fine-tuning models.
